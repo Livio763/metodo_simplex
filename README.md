@@ -46,17 +46,17 @@ npm test
 ## Qué mostrar
 
 1. El tetraedro es la figura que da nombre al método: n+1 vértices en n dimensiones. No es el dibujo del ejemplo.
-2. El scroll cambia el texto de la apertura y gira el sólido. Si el sistema pide menos movimiento, los tres textos quedan uno debajo del otro y el sólido no gira.
+2. El scroll cambia el texto de la apertura y gira el sólido. Un clic sostenido sobre el tetraedro lo gira a mano. Si el sistema pide menos movimiento, los tres textos quedan uno debajo del otro y el sólido no gira solo, pero el arrastre sigue funcionando.
 3. El modelo cargado al entrar es el del informe: maximizar `100 x1 + 125 x2`, con `6 x1 + 4 x2 ≤ 24` y `x1 + x2 ≤ 800`.
 4. En el laboratorio, **Pivote siguiente** avanza una iteración. Entra `x2`, sale `H1`, y el óptimo es `x1 = 0`, `x2 = 6`, `Z = 750`.
 5. El informe escribe `H2 = 806`. La resta correcta es `800 − 6 = 794`. El óptimo no cambia. Conviene decirlo si preguntan.
 6. **Minimización con fase 1** carga otro modelo, de demostración. No es la fábrica de muebles: el informe no publica las existencias de piezas, y sin eso no se puede armar el simplex.
 
-El guion hablado también está en la página, en la sección Guion.
+La página es lo que ve el aula. Este listado no está en la interfaz.
 
 ## Nombres del equipo
 
-Los del informe y de las diapositivas no se copiaron, porque estaban mal. Editen la lista en `src/credits.ts` y vuelvan a correr `npm run dev`.
+No van en la página. Los del informe y de las diapositivas estaban mal, así que no se copiaron.
 
 ## Stack
 

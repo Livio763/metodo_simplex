@@ -76,8 +76,12 @@ export function Stage() {
         ))}
       </div>
       <div className="stage-visual" aria-hidden="true">
-        <Canvas flat camera={{ position: [0, 0.12, 4.15], fov: 42 }} dpr={[1, 1.6]}>
-          <color attach="background" args={["#071525"]} />
+        <Canvas
+          camera={{ position: [0.2, 0.42, 5.55], fov: 30 }}
+          dpr={[1, 2]}
+          gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+          onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}
+        >
           <Crystal progress={progress} motion={motion} />
         </Canvas>
       </div>
