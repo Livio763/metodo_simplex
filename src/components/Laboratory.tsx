@@ -132,7 +132,8 @@ export function Laboratory({ draft, onChange, onInforme, onPhase }: LaboratoryPr
           onClick={() => {
             if (draft.objective.length >= 6) return;
             onChange({
-              sense: draft.sense,
+              ...draft,
+              variableNames: [...draft.variableNames, `x${draft.objective.length + 1}`],
               objective: [...draft.objective, "0"],
               rows: draft.rows.map((row) => ({ ...row, coef: [...row.coef, "0"] })),
             });
@@ -146,7 +147,8 @@ export function Laboratory({ draft, onChange, onInforme, onPhase }: LaboratoryPr
           onClick={() => {
             if (draft.objective.length <= 1) return;
             onChange({
-              sense: draft.sense,
+              ...draft,
+              variableNames: draft.variableNames.slice(0, -1),
               objective: draft.objective.slice(0, -1),
               rows: draft.rows.map((row) => ({ ...row, coef: row.coef.slice(0, -1) })),
             });
@@ -162,7 +164,7 @@ export function Laboratory({ draft, onChange, onInforme, onPhase }: LaboratoryPr
               ...draft,
               rows: [
                 ...draft.rows,
-                { coef: draft.objective.map(() => "0"), rel: "<=", rhs: "0" },
+                { name: `Restricción ${draft.rows.length + 1}`, coef: draft.objective.map(() => "0"), rel: "<=", rhs: "0" },
               ],
             })
           }
